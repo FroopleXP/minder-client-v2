@@ -4,17 +4,26 @@ var app = require('app'),
 
 app.on('ready', function() {
 
-	// Checking if the User has an Internet Connection
-	isOnline(function(err, online) {
-		if (err) throw err;
-		console.log(online);
-	});
-
+	// Creating the main window object
 	var mainWindow = new BrowserWindow({
 		width: 500,
 		height: 600
 	});
 
-	mainWindow.loadUrl('file://' + __dirname + '/views/login.html');
+	// Checking if the User has an Internet Connection
+	isOnline(function(err, online) {
+	
+		if (connected) { // They're connected!
+
+			mainWindow.loadUrl('file://' + __dirname + '/views/login.html');
+
+		} else if (!connected) { // They're not connected!
+
+			mainWindow.loadUrl('file://' + __dirname + '/views/err/no_connection.html');
+
+		}
+
+	});
+
  
 });
