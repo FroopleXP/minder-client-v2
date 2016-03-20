@@ -18,7 +18,7 @@ app.on('ready', function() {
 	
 		if (online) { // They're connected!
 
-			mainWindow.loadUrl('file://' + __dirname + '/views/login.html');
+			mainWindow.loadUrl('http://localhost:1337');
 
 		} else if (!online) { // They're not connected!
 
