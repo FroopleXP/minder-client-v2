@@ -13,11 +13,11 @@ app.on('ready', function() {
 	// Checking if the User has an Internet Connection
 	isOnline(function(err, online) {
 	
-		if (connected) { // They're connected!
+		if (online) { // They're connected!
 
 			mainWindow.loadUrl('file://' + __dirname + '/views/login.html');
 
-		} else if (!connected) { // They're not connected!
+		} else if (!online) { // They're not connected!
 
 			mainWindow.loadUrl('file://' + __dirname + '/views/err/no_connection.html');
 
