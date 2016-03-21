@@ -8,7 +8,8 @@ app.on('ready', function() {
 	var mainWindow = new BrowserWindow({
 		"width": 500,
 		"height": 600,
-		"resizable": false
+		"resizable": false,
+		"icon": 'icon.png'
 	});
 
 	mainWindow.setMenuBarVisibility(false);
